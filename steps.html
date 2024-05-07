@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <Title>Computer Server Configuration</Title>
+    <link rel="stylesheet" href="steps2computer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<section class="header">
+    <nav>
+        <a href="steps.html"><img src="logo.png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">COURSE</a></li>
+                <li><a href="">BLOG</a></li>
+                <li><a href="">CONTACT</a></li> 
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+<div class="text-box">
+    <h1>PROCEDURES OF CONFIGURING A COMPUTER SERVER</h1>
+    <a href=""class="hero-btn">Visit Us To Know More</a>
+</div>
+    
+</section>
+    
+<!----- campus ----->
+
+<section class="campus">
+    <h2>Setting Up a Computer Server: A Step-by-Step Guide</h2>
+    <h6>Written by: Kurt Russel Fernandez<br>Published by: Richocow Technologies<br>May 08, 2024</h6>
+    <p><h8>In the digital age, businesses and organizations rely heavily on efficient and secure computer servers.  These workhorses operate behind the scenes, but their configuration is crucial for smooth network operation.  Just like a conductor leads an orchestra, server configuration fine-tunes various settings to ensure all network components work together in harmony.  By understanding these key configuration functions,  you'll gain the knowledge to build a robust and reliable foundation for your IT infrastructure. Here are the steps in setting up a computer server:</p>
+    <p><h7>A. Formatting</h7><br><h8>Before installing the operating system, you'll need to format the server's hard drive. This erases all existing data and prepares the drive for a fresh installation.Just follow the following steps and procedures:</p>
+        <p><h9>Steps of Formatting</h9><br><h8>Insert a bootable flash drive > Press F2 and delete upon restarting > Press any key (if required)
+> Select language (English) > Select operating system (Windows Server 2008 R2 Standard
+Full Installation) > Click I accept > Select custom > Delete all partitions > Multiply .50 or .60
+on the default size then apply (it depend on the given percentages) > Click Ok > Click
+unallocated and new and apply > Click Partition 2 > Click Next > Wait to finish > Click Restart
+Now > Eject the flash Drive > Wait to complete > Click Ok > To log in type the password
+with complexity > Wait to open > Insert the flash drive w/ driver pack > Open the driver pack
+solution > Install drivers > Start Installation > Wait for 10-15minutes > Restart the computer > Remove the flash drive.</h8></p>
+    <p><h7>B. IP Address and Computer Name</h7><br><h8>Once the operating system is installed, you need to configure the server's IP address. This unique address identifies the server on the network and allows other devices to communicate with it. You'll also assign a computer name to the server for easier identification.</p>
+    <p><h9>Steps of Configuring IP Address and Computer Name</h9><br><h8>Server PC > Go to Desktop > Check the LAN Connection > click “Open Network and
+Sharing Center/LOCAL AREA CONNECTION > Click Properties > Uncheck
+4th
+IPV6 > Double click IPV4 > Use the following assigned IP addresses by your assessor (IP
+Address, subnet mask, default gateway, etc.) > Use the IP address of the router as your default
+gateway and copy the IP address of your PC and put it as your Preferred DNS Server>Click
+Ok > Go to this PC or my computer > Go to change settings > Go to change > Change the
+computer name > Click Ok > Close All > Restart Now > Recheck IP Address. </h8></p>
+    <p><h7>C. Change Router and Access Point's Name</h7><br><h8>For manageability and security purposes, you can rename your router and access point's SSID (wireless network name). This helps you distinguish your network from others and allows for easier connection.</p>
+    <p><h9>Steps of Changing Router and Access Point's Name</h9><br><h8>Open Internet Explorer or any browser > Go to search button > Input the IP Address of the router or access point > Type the username (admin) and password (admin) > Click Add > Click Add again > Click Close > Go to Wireless > Change the wireless router or access point name then Scroll Down > Click Save > Click close.</h8>
+    </p>
+    <p><h7>D. Active Directory Domain Services (ADDS)</h7><br><h8>Active Directory is a directory service that plays a central role in Windows Server networks. It stores information about all network resources, including users, computers, printers, and more.<br><h8>This allows for centralized management and access control. Before anything else, you should have done server formatting, drivers’ installation, IP Address
+with router and access point’s security and name configuration and also sever-PC name.<br><h8>
+Since Windows 2000, Active Directory has been the driving force behind Microsoft Server
+Networking Services. Active Directory provides the structure to centralize the network and store
+        information about network resources across the entire domain.Active Directory uses Domain Controllers to keep this centralized storage available to network users.In this scenario we are going to install Active Directory fresh with a brand-new Domain Controller after an install of Windows Server 2008 R2.</h8></p>
+        <p>Note: Your domain name should be reliably unique. Do not use the same domain as your website, for example, and avoid extensions like .local unless you have registered that domain name in DNS. We suggest a domain name that is not used for anything else, like css.com, tesda.org, slhs.edu and others</p>
+    <p><h9>Shortcut Steps to setup Active Directory on Windows Server 2008 </h9><br><h8>Press Windows+R > Type DCPROMO > Press enter and wait > Check the box > Click Next >
+Click Next > Check the box > Click Next > Check create a new domain in a new forest > Click
+Next > type domain (example: tesda.org) > Click Next > Click Next > Choose Windows Server
+2008 R2 > Click Next > Click Next > Click Yes > Click Next > Type Password (P@$$w0rd) >
+        Click on the box (reboot on completion) > Restart > Check IP Address > recheck IP addresses.</h8></p>
+    <p><h7>E. Adding Roles</h7><br><h9>1. DCHP Server</h9><br><h8>In charge in setting up the IP addresses range that will be given to the client PCs
+that will be connected in the server
+Dynamic Host Configuration Protocol (DHCP) is a core infrastructure service on any
+network that provides IP addressing and DNS server information to PC clients and any other device.
+Installing Windows Server 2008 DCHP Server is easy. DHCP Server is now a “role” of
+Windows Server 2008.<br><h8>To do this, you will need a Windows Server 2008 system already installed
+and configured with a static IP address. You will need to know your network’s IP address range, the
+range of IP addresses you will want to hand out to your PC clients, your DNS server IP addresses,
+and your default gateway.<br><h8>Additionally, you will want to have a plan for all subnets involved, what
+scopes you will want to define, and what exclusions you will want to create. To start the DHCP installation process, you can click Add Roles from the Initial Configuration Tasks window or
+        from Server Manager / Roles / Add Roles.</h8></p>
+    <p><h9>2. File Services</h9><br><h8>In a server network provide a centralized location for storing and managing
+files and data that can be accessed by multiple users within the network. The main functions of
+        file services include:</h8></p>
+    <p><h8>i. File Storage: File services allow users to store their files, documents, and data in a secure and
+organized manner on a central server. This centralized storage makes it easier for users to
+access, share, and collaborate on files.</h8></p>
+    <p><h8>ii. File Sharing:  Users can easily share files with others on the network by granting permissions
+and access rights to specific folders or files. This facilitates collaboration and teamwork among
+users in the network.</h8></p>
+    <p><h8>iii. Data Backup and Recovery: File services often include backup and recovery features to
+protect data from loss due to accidental deletion, hardware failure, or other issues. Regular
+        backups ensure that important files are safe and can be recovered if needed.</h8></p>
+    <p><h8>iv. Access Control: Administrators can set permissions and access controls to regulate who can
+view, edit, or delete files within the network. This helps maintain data security and
+confidentiality.</h8></p>
+    <p><h8>v. File Synchronization: File services may offer synchronization capabilities, ensuring that files are
+up to date across devices and locations. This is particularly useful for users who work on
+multiple devices or need access to files remotely.
+</h8></p>
+    <p><h9>3. Print and document services </h9><br><h8>Print and document services in a server network facilitate the management and sharing of
+documents and enable users to print documents from their devices to network-connected printers.
+The main functions of print and document services include:</h8></p>
+    <p><h8>i. Print Queue Management: Print services allow users to send print jobs to a centralized print
+queue on the server. The server manages the print queue, prioritizes print jobs, and sends
+them to the designated printer for printing.
+</h8></p>
+    <p><h8>ii. Printer Sharing: Users can access and use shared printers on the network, eliminating the
+need for individual printers at each workstation. Print and document services make it easy to
+share printers among multiple users, reducing costs and improving efficiency
+</h8></p>
+    <p><h8>iii. Driver Management: Print services handle driver installation and management for network
+printers. Users can easily connect to printers without needing to install printer drivers on their
+devices manually.
+</h8></p>
+    <p><h8>iv. Print Job Monitoring: Administrators can monitor print usage, track printing costs, and
+generate reports on print activities within the network. This helps in managing resources
+effectively and optimizing printing workflows.</h8></p>
+    <p><h8>v. Document Management: Document services provide a platform for storing, organizing, and
+sharing electronic documents within the network. Users can access, collaborate on, and
+manage documents centrally from the server.</h8></p>
+    <p><h8>vi. Security and Authentication: Print and document services offer security features such as
+user authentication, access controls, and encryption to protect sensitive documents and
+ensure that only authorized users can print or access confidential information.</h8></p>
+    <p><h9>Steps to add roles: DHCP Server, File services, Print and Document services</h9><br><h8>Click the Server Manager Icon > Scroll down > Go to Add Roles > Click Next > Choose
+DHCP Server, file services and print and document services > Click Next > Click Next Again >
+Check the IP Address > Click Next > Click Validate > Click Next > Click Next > Click Add >
+Type the scope name (usually USERS) > input the starting and ending IP Addresses (it depend on
+the assigned IP addresses) > Input the default gateway of your Server PC>Click Ok > Click Next >
+Click Disable DHCPv6 > Click Next > Click Next > Click Next > Click Next > Click Next > Click
+Install (result must be installation succeeded, if not recheck/remove roles and do it again but this may
+have some negative effects sometimes).
+</h8></p>
+    <p><h7>F. Make Folder Redirection </h7><br><h8>All of the shared folders of the clients connected to the server PC will be saved
+in the redirection folder. Folder redirection allows you to automatically redirect specific folders on client computers (desktops/laptops) to a central location on the server. This ensures users have their files readily available from any connected device and simplifies data backup and management.</p>
+    <p><h8>Server PC > Go to file explorer > Go to my computer/this PC > Go to Local Disk C >
+Format Local Disk C > Enter Drive D > Make new folder (FOLDER REDIRECTION
+/Redirection) > Right click the folder then go to Properties > Go to sharing > Go to Advanced
+Sharing > Click the box (Share this folder) > Click the permissions (allow all) > Click Ok > Apply
+then close > Copy the network path > Go to Security Tab> Advanced>Change Permission>
+Add >Type everyone > Check Names > ok</h8></p>
+    <p><h7>G. Active Directory Users and Computers</h7><br><h8>Active Directory Users and Computers (ADUC) is a tool used to manage user accounts, groups, computers, and other objects within an Active Directory domain. It allows administrators to create, modify, and delete users, assign permissions, and manage group memberships. ADUC helps managing user accounts, groups, computers,
+and organizational units within an Active Directory environment. Here are some key functions of ADUC
+        within a server network:</p>
+    <p><h8>i. User Account Management: ADUC allows administrators to create, modify, and delete user
+accounts. They can set password policies, account permissions, group memberships, and other
+user-specific settings.</h8></p>
+    <p><h8>ii. Group Management: Administrators can create security and distribution groups, manage group
+memberships, and assign permissions to groups. This helps in simplifying user access control and
+        permissions management.</h8></p>
+    <p><h8>iii. Computer Management: ADUC enables administrators to manage computer objects within the
+Active Directory. They can join computers to the domain, configure computer-specific settings,
+        and apply group policies to computer accounts.</h8></p>
+<p><h8>iv. Organizational Unit (OU) Management: OUs are containers within Active Directory that help
+organize and manage objects like users, groups, and computers. ADUC allows administrators to
+    create OUs, delegate administrative tasks, and apply group policies at the OU level.</h8></p>
+<p><h8>v. Group Policy Management: ADUC integrates with Group Policy Management to apply and
+manage group policies across the network. Administrators can configure settings related to
+security, desktop configurations, software installations, and more through group policies.</h8></p>
+    <p><h9>Steps of ADUC configuration</h9><br><h8>Server PC > Go to Administrative Tools > Go to Active Directory Users and Computers
+> Go to the + sign of the tesda.org > Highlight tesda.org > Right click and click New > Go to
+Organizational Unit > type assigned name (example: CSS Lab) > Click Ok > Right click CSS
+Lab > Click New and Users > type assigned users’ name > user login name > Click Next > type
+password (P@$$W0rd) – base on the given password > Click Next > Click Finish > Create another
+user/s. >
+Highlight the first user > Right click and properties > Go to profile > Paste the copied network
+path a while back > Click on connect > Choose D > Put the network path to “To” > Click Apply >
+Click Ok > Do the same steps to the other users.</h8></p>
+    <p><h7>H. Group Policy Management</h7><br><h8>The Group Policy Management function in a server network allows administrators to manage
+and apply group policies across multiple computers within a network. Group policies help in
+controlling user accounts, computer settings, security configurations, and more, centrally from a
+server. <br><h8>It ensures consistency in settings and security configurations across all connected devices
+within the network. Group Policy Management is a tool used to create and apply group policies across multiple computers in a domain. Group policies define settings that control user accounts, computer configurations, security options, and more. This ensures consistency and simplifies management across all devices.</p>
+    <p><h9>Steps of GPM Configuration</h9><br><h8>Go to Start Button > Go to Administrative Tools > Find Group Policy Management > Go to
++ Forest > Go to Domain’-“tesda.org” > Go to + tesda.org > Highlight Tesda and right click > Click
+“Create a GPO in this domain, and Link it here…” > Type name (FOLDER
+REDIRECTION/Redirection) > Click Ok.</h8><br><h8>Right Click Default Configuration > Go to edit > Select Computer Configuration > Select
+Policies > Select Window Settings > Select Security Setting > Select Account Settings > Go to
+Password Policy > Set Minimum Password Length, characters, disabled “password must meet
+complexity” > Click Apply > Click Ok > Close.</h8><br><h8>Go to Redirection (below default configuration) > Select User Configuration > Select Policies
+> Select Window Settings > Select Folder Redirection > Select icon (example: desktop, documents,
+etc.)</h8><br><h8>Right click on the icon > properties > Select (Basic) Setting > Paste the copied network path > Click
+Apply > Click Yes > Click Ok > Do these to the other icons.</h8><br><h8>Update the policy through command prompt (cmd) > go to cmd > type gpupdate /force > enter >
+restart > log in>recheck IP address</h8></p>
+    <p><h7>I. Joining Clients (Desktop and/or Laptop)</h7><br><h8>Client computers (desktops/laptops) need to be joined to the domain to access network resources and benefit from centralized management. The joining process involves configuring the client's network settings and domain membership.</p>
+    <p><h9>Steps of Joining Clients</h9><br><h8>Change the computer name for desktop if needed, for laptop no need > Make sure that you
+have connection to the domain (tesda.org) > Make sure to Turn off firewall of Client and Server PC>
+Turn on all Network Sharing Options in the Advanced Sharing Settings of Client and Server PC
+>Set a Static IP address of the Client PC that is within the IP address scope that was set> Use the
+IP address of the Server as the Preferred DNS Server of the client PC> Ping the client and server
+PC>Recheck the Network sharing options and make sure all are turned on.</h8><br><h8>Client PC>Go to my computer or this PC > Right click > Properties > Click to Change
+Settings > Click Change > Type the name required > Click the Domain > Type the Domain name
+(tesda.org) > Click OK > Type the name (administrator) > type the password of server > Click OK > Close all the open apps > Restart the computer > Click other user > Log in using user’s name and
+        password > Create folder in the icon you’ve configured in the GPM.</h8></p>
+    <p><h7>J. Testing Folder Redirection</h7><br><h8>After configuring folder redirection, it's important to verify that it's working correctly. This involves testing access to the redirected folders on client computers and ensuring proper permissions are set.
+    <p><h9>Testing a Folder</h9><br><h8>Double click on the folder (ex. DOCUMENTS) under Drive C or D > Click Continue >
+Click Security Tab > Click Continue > Select Administration (TESDA/Admin) > Click Apply
+> Click OK > Click OK > Click Close > Double-click the folder again > Click Continue > Repeat
+the process on the other folders > until you see and test the folder created in the client desktop/laptop
+(you can do this vice versa).</h8></p>
+    <p><h7>K. Remote Desktop Connection</h7><br><h8>Remote Desktop Connection allows you to remotely access and control another computer from your own device. This is useful for administrators to manage servers and troubleshoot issues without needing physical presence.
+    <p><h9>Steps of Remoting a Desktop Connection</h9><br><h8>Ping the PCs that you want to connect using the “Remote Desktop App” > turn off the firewall
+for both PCs.> Make sure to Log off the PC that you want to access in the Remote desktop after
+configuring their settings
+.</h8><br><h8>In the computer server > Go to Start Button > Search remote setting under my computer or this
+PC properties > Click Allow remote access to your computer > Select the second choice > Click
+OK > Click Select Users > Click Add > type the name of the present user > Click Check Names
+> Click OK > Highlight name with Tesda/domain name > Click OK > Repeat the same process on
+the client desktop/laptop.</h8><br><h8>In the client desktop/laptop > Go to Start Button > Search Remote Desktop Connection and
+click > type the server name/IP address > type the password > Click OK > Click Yes > Click other
+user > type administrator and password > Click Yes > You can now access server account.
+</h8></p>
+    <p><h7>L. Unjoining the Client Desktop/Laptop </h7><br><h8>If a client computer no longer needs to be part of the domain, it can be unjoined. This process removes the computer from the domain and restores its workgroup settings.
+    <p><h9>Steps of Unjoining the Client Desktop/Laptop</h9><br><h8>Go to Computer Properties > Go to Change Settings > Input the username and password > Click Yes >
+Click Change > Click Workgroup > Type the word WORKGROUP > Click OK > Click OK > Click
+OK > Click OK > Close All tabs > Click Restart Now
+</h8></p>
+    <p><h7>M. Server configuration in the Oracle Virtual Box </h7><br><h8>Oracle VirtualBox is a virtualization software that allows you to create and run virtual machines on your computer. This can be helpful for practicing server configuration in a safe and isolated environment without affecting your physical hardware.
+        <p><h9>Setting-up the Oracle Virtual box</h9><br><h8>1. Search “Oracle VirtualBox download” then select the installer compatible to your device.</h8><br><h8>2. Set-up two accounts for the client and server account</h8><br><h8>3. Click new and input your last name in the name tab, ex QuintoClient/ QuintoServer.</h8><br><h8>4. Select the correct OS. Use the Server 2008 R2 and the Windows 10 OS.</h8><br><h8>5. Click finish and wait for it to install the OS.</h8><br><h8>6. Go to the “Oracle VM VirtualBox Manager” > click the account that you want to configure >
+Click settings > Network > Click the drop-down button of “Attached to:” then
+select “Bridged Adapter” > click ok > Apply these steps for the client and
+            server account</h8><br><h8></h8>After creating the client and server OS you can now follow the actual server
+configuration steps.</h8>
+    
+    
+<!----- more ----->
+<section class="more">
+    <h3>Learning with Richocow Technologies, is now easier and faster!</h3>
+    <h4>All Rights Reserved 2024</h4>
+    <h5></h5>
+    <center><img src="logo2.png" alt="centered image" width="30%"></center>
+    <h15></h15>
+</section>
+    
+<!-----JavaScript for Toggle Menu----->
+<script>
+
+    var navLinks = document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right="0"
+    }
+    function hideMenu(){
+        navLinks.style.right="-200px"
+    }
+</script>    
+    
+    
+</body>
+</html>
